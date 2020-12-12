@@ -1,0 +1,61 @@
+.main-form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.next-prev {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 100px;
+  margin-top: auto;
+  color: #ccc;
+  padding: 20px;
+  /* vertical-align: middle; */
+  border: 1px solid white;
+}
+.main-info-form {
+  display: flex;
+  flex-direction: row;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ccc;
+}
+
+.bio-chip {
+  padding: 20px;
+}
+.sample-info {
+  padding: 20px;
+}
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #777 !important;
+ }
+
+ .icons {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ }
+
+ mat-form-field .mat-form-field-label {
+   color: #777 !important;
+ }
+
+ input.mat-input-element {
+  color: #777;
+}
+ .mat-form-field-underline {
+  /*change color of underline*/
+  background-color: #777 !important;
+}
+
+.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: red !important;
+}

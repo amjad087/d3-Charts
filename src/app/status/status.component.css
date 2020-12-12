@@ -1,0 +1,46 @@
+.main-form {
+  display: flex;
+  flex-direction: row;
+  min-width: 90%;
+  margin: 2rem auto;
+  align-items: center;
+  justify-content: space-between;
+  color: #ccc;
+}
+
+.inner-blocks {
+  margin: 10px;
+  min-width: 24%;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  display: block;
+  justify-content: center;
+}
+
+.inner-blocks-wihout-border {
+  margin: 10px;
+  min-width: 24%;
+  text-align: center;
+}
+
+.mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #777 !important;
+ }
+
+ mat-form-field .mat-form-field-label {
+   color: #777 !important;
+ }
+
+ input.mat-input-element {
+  color: #777;
+}
+ .mat-form-field-underline {
+  /*change color of underline*/
+  background-color: #777 !important;
+}
+
+.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: red !important;
+}

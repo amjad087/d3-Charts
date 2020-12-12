@@ -1,0 +1,20 @@
+mat-list {
+  margin-top: 100px;
+  color: #ccc !important;
+  max-width: 20%;
+}
+
+.horizontal-mat-list-item {
+  float: right;
+  display: list-item;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.mat-list-base {
+  display: flex !important;
+}
+
+.mat-list-item-content {
+  color: #ccc;
+}

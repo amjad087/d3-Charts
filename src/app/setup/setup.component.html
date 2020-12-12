@@ -1,0 +1,41 @@
+<div class="main-form">
+  <div class="next-prev">
+    <mat-icon routerLink="/settings" style="cursor: pointer;">keyboard_arrow_left</mat-icon>
+  </div>
+  <div class="main-info-form">
+    <div class="bio-chip">
+      <h4>Biochip Information</h4>
+      <form >
+        <mat-form-field class="example-full-width">
+          <mat-label>Profile Name</mat-label>
+          <input matInput [matKeyboard]="'en'">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Notes</mat-label>
+          <input matInput [matKeyboard]="'en'">
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="samaple-info">
+      <h4>Sample Information</h4>
+      <form >
+        <mat-form-field class="example-full-width">
+          <mat-label>Profile Name</mat-label>
+          <input matInput [matKeyboard]="'en'">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Notes</mat-label>
+          <input matInput [matKeyboard]="'en'">
+        </mat-form-field>
+      </form>
+    </div>
+    <div style="max-width: 50px; padding: 10px;">
+      <h3>&nbsp;</h3>
+      <mat-icon>apps</mat-icon>
+      <mat-icon style="margin-top: 30px;">folder</mat-icon>
+    </div>
+  </div>
+  <div class="next-prev">
+    <mat-icon routerLink="/setup-two" style="cursor: pointer;">keyboard_arrow_right</mat-icon>
+  </div>
+</div>
