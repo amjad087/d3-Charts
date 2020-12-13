@@ -20,3 +20,52 @@ mat-form-field {
   display: block;
   width: 100%;
 }
+
+.next {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  text-align: center;
+  align-items: center;
+  max-width: 40px;
+  max-height: 80px;
+  min-width: 40px;
+  min-height: 80px;
+  border-top-left-radius: 42px;
+  border-bottom-left-radius: 42px;
+  margin-top: auto;
+  color: #ccc;
+  /* vertical-align: middle; */
+  border: 2px solid red;
+  border-right: 0;
+  background: #222;
+}
+
+.prev {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  text-align: center;
+  align-items: center;
+  max-width: 40px;
+  max-height: 80px;
+  min-width: 40px;
+  min-height: 80px;
+  border-top-right-radius: 42px;
+  border-bottom-right-radius: 42px;
+  margin-top: auto;
+  color: #ccc;
+  /* vertical-align: middle; */
+  border: 2px solid red;
+  border-left: 0;
+  background: #222;
+}
+
+.next .material-icons,
+.prev .material-icons {
+  font-size: 32px;
+}
+
+.prev .mat-icon {
+  margin-left: -20px;
+}
