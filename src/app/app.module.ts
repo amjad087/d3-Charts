@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,6 +23,8 @@ import { SetupThreeComponent } from './setup-three/setup-three.component';
 import { SetupFourComponent } from './setup-four/setup-four.component';
 import { SetupFiveComponent } from './setup-five/setup-five.component';
 import { StatusComponent } from './status/status.component';
+import { LockScreenComponent } from './lock-screen/lock-screen.component';
+import { ChartsComponent } from './services/charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +38,13 @@ import { StatusComponent } from './status/status.component';
     SetupThreeComponent,
     SetupFourComponent,
     SetupFiveComponent,
-    StatusComponent
+    StatusComponent,
+    LockScreenComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,

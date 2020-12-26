@@ -1,13 +1,32 @@
-<div class="login">
-  <form (ngSubmit) = "onLogin()" (keydown) = "onKeyDown($event)" #form="ngForm">
-    <mat-form-field class="example-full-width">
-      <mat-label>User Name</mat-label>
-      <input matInput [matKeyboard] [darkTheme]="true">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input type="password" matInput [matKeyboard] [darkTheme]="true">
-    </mat-form-field>
-    <button mat-raised-button color="primary">Login</button>
-  </form>
+<div class="logo-small">
+  <!-- <img src="assets/Logo-Small.png" alt=""> -->
+  <h1>LOGO HERE</h1>
+</div>
+<div class="main">
+  <div class="next-prev">
+    <img src="assets/Button-Back.png" alt="" class="img">
+  </div>
+  <div class="login">
+    <div class="login-main">
+      <div style="max-width: 450px;">
+        <form (ngSubmit) = "onLogin()" (keydown) = "onKeyDown($event)" #form="ngForm">
+          <mat-form-field class="example-full-width">
+            <mat-label>User Name</mat-label>
+            <input matInput [matKeyboard] [darkTheme]="true">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput [matKeyboard] [darkTheme]="true">
+          </mat-form-field>
+          <button mat-raised-button color="primary">Login</button>
+        </form>
+      </div>
+      <div style="max-width: 150px; min-width: 150px;">
+        <img src="assets/Button-QR.png" alt="" class="img">
+      </div>
+    </div>
+  </div>
+  <div class="next-prev">
+    <img src="assets/Button-Next.png" alt="" class="img">
+  </div>
 </div>

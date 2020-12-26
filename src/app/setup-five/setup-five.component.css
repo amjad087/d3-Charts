@@ -1,7 +1,7 @@
 .main-form {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
 }
 .next {
@@ -19,7 +19,7 @@
   margin-top: auto;
   color: #ccc;
   /* vertical-align: middle; */
-  border: 2px solid red;
+  border: 2px solid #8F0804;
   border-right: 0;
   background: #222;
 }
@@ -39,7 +39,7 @@
   margin-top: auto;
   color: #ccc;
   /* vertical-align: middle; */
-  border: 2px solid red;
+  border: 2px solid #8F0804;
   border-left: 0;
   background: #222;
 }
@@ -48,7 +48,7 @@
   border-radius: 50%;
   background: #222;
   fill: #222;
-  border: 2px red solid;
+  border: 2px #8F0804 solid;
   width: 40px;
   height: 40px;
   padding-top: 16px;
@@ -98,5 +98,5 @@
 
 .mat-form-field-ripple {
  /*change color of underline when focused*/
- background-color: red !important;
+ background-color: #8F0804 !important;
 }

@@ -1,8 +1,8 @@
 .main-form {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   justify-content: space-between;
+  align-items: center;
 }
 .next {
   display: flex;
@@ -48,7 +48,7 @@
   display: flex;
   flex-direction: row;
   max-width: 600px;
-  margin: 2rem auto;
+  margin: auto;
   border-radius: 15px;
   align-items: center;
   justify-content: flex-start;
@@ -80,7 +80,7 @@
 
 .mat-form-field-ripple {
  /*change color of underline when focused*/
- background-color: red !important;
+ background-color:#8F0804 !important;
 }
 
 .icons {
@@ -94,7 +94,7 @@
   border-radius: 50%;
   background: #222;
   fill: #222;
-  border: 2px red solid;
+  border: 2px#8F0804 solid;
   width: 40px;
   height: 40px;
   padding-top: 16px;

@@ -1,0 +1,36 @@
+.main {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.status {
+  display: block;
+  border-style: solid;
+  border-width: 0px 1px 0px 0px;
+  -moz-border-image: url("../../assets/Line88.png") 2 repeat;
+  -webkit-border-image: url("../../assets/Line88.png") 2 repeat;
+  -o-border-image: url("../../assets/Line88.png") 2 repeat;
+  border-image: url("../../assets/Line88.png") 2 fill repeat;
+  height: 300px;
+  width: 25%;
+  text-align: center;
+}
+
+.status h1,
+.status-last h1
+ {
+  text-decoration: underline;
+}
+.status-last {
+  display: block;
+  height: 300px;
+  width: 25%;
+}
+
+.path {
+  margin-left: 5%;
+}

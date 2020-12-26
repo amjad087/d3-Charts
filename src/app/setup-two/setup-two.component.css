@@ -1,4 +1,5 @@
 .main-form {
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -19,10 +20,36 @@
   margin-top: unset;
 }
 
+.inner-block-1 {
+  display: block;
+  margin-bottom: 10px;
+  min-width: 250px;
+  min-height: 330px;
+  background-image: url("../../assets/illustration1.png");
+  background-size: 250px 330px;
+}
+.inner-block-2 {
+  display: block;
+  margin-bottom: 10px;
+  min-width: 250px;
+  min-height: 330px;
+  background-image: url("../../assets/illustration2.png");
+  background-size: 250px 330px;
+}
+.inner-block-3 {
+  display: block;
+  margin-bottom: 10px;
+  min-width: 250px;
+  min-height: 330px;
+  background-image: url("../../assets/illustration3.png");
+  background-size: 250px 330px;
+}
 .inner-blocks {
-  margin: 10px;
-  min-width: 200px;
+  display: block;
+  min-width: 250px;
+  min-height: 360px;
   text-align: center;
+  margin-left: 20px;
 }
 .inner-block-top {
   height: 400px;

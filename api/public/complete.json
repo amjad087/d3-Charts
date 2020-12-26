@@ -1,0 +1,31 @@
+
+[
+  {
+    "id": "available",
+    "data": [
+      {"complete": "100"},
+      {"complete": "0"}
+    ]
+  },
+  {
+    "id": "john",
+    "data": [
+      {"complete": "75"},
+      {"complete": "25"}
+    ]
+  },
+  {
+    "id": "complete",
+    "data": [
+      {"complete": "100"},
+      {"complete": "0"}
+    ]
+  },
+  {
+    "id": "unavailable",
+    "data": [
+      {"complete": "100"},
+      {"complete": "0"}
+    ]
+  }
+]

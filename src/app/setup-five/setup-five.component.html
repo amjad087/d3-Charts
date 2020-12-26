@@ -1,10 +1,12 @@
 <div class="main-form">
-  <div class="prev">
-    <mat-icon routerLink="/setup-four" style="cursor: pointer;">keyboard_arrow_left</mat-icon>
+  <div class="next-prev">
+    <div class="back-header img">
+      <a routerLink="/setup-four" class="invisibleLink"></a>
+    </div>
   </div>
   <div class="main-info-form">
     <div class="bio-chip">
-      <h4>Current Save Location</h4>
+      <h3>Current Save Location</h3>
       <form >
         <mat-form-field class="example-full-width">
           <mat-label>Location</mat-label>
@@ -13,7 +15,7 @@
       </form>
     </div>
     <div class="samaple-info">
-      <h4>Additional Save Location</h4>
+      <h3>Additional Save Location</h3>
       <form >
         <mat-form-field class="example-full-width">
           <mat-label>Location</mat-label>
@@ -23,11 +25,13 @@
     </div>
     <div id="folder-icons" class="icons">
       <h3>&nbsp;</h3>
-      <mat-icon>apps</mat-icon>
-      <mat-icon style="margin-top: 30px;">folder</mat-icon>
+      <img src="assets/Button-QR.png" alt="" class="img-folders">
+      <img src="assets/Button-Upload.png" alt="" class="img-folders">
     </div>
   </div>
-  <div class="next">
-    <mat-icon routerLink="/status" style="cursor: pointer;">keyboard_arrow_right</mat-icon>
+  <div class="next-prev">
+    <div class="next-header img">
+      <a routerLink="/status" class="invisibleLink"></a>
+    </div>
   </div>
 </div>

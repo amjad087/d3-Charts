@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+
+import { LoginService } from './../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   @ViewChild('form', { static: true }) ngForm: NgForm;
 
-  constructor(private router: Router) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.ngForm.form.valueChanges.subscribe(x => {
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    this.router.navigate(['/home']);
+    this.loginService.onLogin();
   }
 
 }

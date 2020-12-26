@@ -1,3 +1,4 @@
+import { LockScreenComponent } from './lock-screen/lock-screen.component';
 import { StatusComponent } from './status/status.component';
 import { SetupFiveComponent } from './setup-five/setup-five.component';
 import { SetupFourComponent } from './setup-four/setup-four.component';
@@ -12,7 +13,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LockScreenComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'setup', component: SetupComponent },

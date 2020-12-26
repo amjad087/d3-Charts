@@ -1,4 +1,51 @@
-<div class="main-form">
+<div class="main">
+  <div class="next-prev">
+    <div class="back-header img">
+      <a routerLink="/settings" class="invisibleLink"></a>
+    </div>
+  </div>
+  <div class="main-info-form">
+    <div class="bio-chip">
+      <h3>Biochip Information</h3>
+      <form >
+        <mat-form-field class="example-full-width">
+          <mat-label>Profile Name</mat-label>
+          <input matInput [matKeyboard] [darkTheme]="true">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Notes</mat-label>
+          <input matInput [matKeyboard] [darkTheme]="true">
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="samaple-info">
+      <h3>Sample Information</h3>
+      <form >
+        <mat-form-field class="example-full-width">
+          <mat-label>Profile Name</mat-label>
+          <input matInput [matKeyboard] [darkTheme]="true">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Notes</mat-label>
+          <input matInput [matKeyboard] [darkTheme]="true">
+        </mat-form-field>
+      </form>
+    </div>
+    <div id="folder-icons" class="icons">
+      <h3>&nbsp;</h3>
+      <img src="assets/Button-QR.png" alt="" class="img-folders">
+      <img src="assets/Button-Upload.png" alt="" class="img-folders">
+    </div>
+  </div>
+  <div class="next-prev">
+    <div class="next-header img">
+      <a routerLink="/setup-two" class="invisibleLink"></a>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="main-form">
   <div class="prev">
     <mat-icon routerLink="/settings" style="cursor: pointer;">keyboard_arrow_left</mat-icon>
   </div>
@@ -38,4 +85,4 @@
   <div class="next">
     <mat-icon routerLink="/setup-two" style="cursor: pointer;">keyboard_arrow_right</mat-icon>
   </div>
-</div>
+</div> -->
