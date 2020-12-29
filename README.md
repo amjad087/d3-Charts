@@ -16,6 +16,7 @@ npm install
 #Node JS Server (make sure Node Js is already installed)
 
 1: cd server
+
 2: npm install
 
 #optional
