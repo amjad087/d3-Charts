@@ -25,8 +25,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     {"complete": "25"},
   ];;
   private completeData = [
-    {"complete": "100"},
-    {"complete": "0"},
+    {"complete": "75"},
+    {"complete": "25"},
   ];;
   private unavailableData = [
     {"complete": "100"},
@@ -34,9 +34,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ];;
 
   private _current: any;
+  private _currComplete: any;
   private arc: any;
+  private arcComplete: any;
   private pie: any;
   private path: any;
+  private pathComplete: any;
 
   private subscription: Subscription;
   private svg;
@@ -192,18 +195,23 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
     // Build the pie chart
-    this.svg3
+    this.pathComplete = this.svg3
     .selectAll('pieces')
     .data(this.pie(this.completeData))
     .enter()
-    .append('path')
-    .attr('d', d3.arc()
-      .innerRadius(90)
-      .outerRadius(this.radius)
-    )
-    .attr('fill', (d, i) => (this.completeColors(i)))
-    .attr("stroke", "#121926")
-    .style("stroke-width", "1px");
+    .append('path');
+
+    this.arcComplete = d3.arc()
+    .innerRadius(90)
+    .outerRadius(this.radius);
+
+    this.pathComplete.transition()
+      .duration(500)
+      .attr("fill", (d, i) => this.completeColors(i))
+      .attr("stroke", "#121926")
+      .style("stroke-width", "1px")
+      .attr('d', this.arc)
+      .each(function(d) { this._currComplete = d; }); // store the initial angles
 
     // Build the pie chart
     this.svg4
@@ -234,7 +242,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   change(data) {
     this.path.data(this.pie(data));
+    this.pathComplete.data(this.pie(data));
     this.path.transition().duration(750).attrTween("d", this.arcTween); // redraw the arcs
+    this.pathComplete.transition().duration(750).attrTween("d", this.arcTweenComplete); // redraw the arcs
   }
 
   arcTween = (datum, index) => {
@@ -244,6 +254,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         return this.arc(interpolation(t));
     }
   }
+
+  arcTweenComplete = (datum, index) => {
+    const interpolation = d3.interpolate(this._currComplete, datum);
+    // this._current[index] = interpolation(0);
+    return (t) => {
+        return this.arcComplete(interpolation(t));
+    }
+  }
+
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
