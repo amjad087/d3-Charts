@@ -8,11 +8,38 @@ git clone https://github.com/amjad087/d3-Charts.
 
 cd d3-charts
 
+run the follwing command (some dependencies need to be installed for ElectronJS)
+
 npm install
 
-## Development server
+
+#Node JS Server (make sure Node Js is already installed)
+
+1: cd server
+2: npm install
+
+#optional
+if you want to rebuild the server.js again from server.ts file (or in case of any changes in server.ts file), run the following command
+
+ 	2.1 tsc ./server.ts
+
+3: node ./server.js
+
+## Angular Development server
+
+Note: server.js must be running already
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+OR
+
+if you want to run it electron
+
+# Electron
+
+run the following command
+
+npm run start:electron
 
 ## Code scaffolding
 
