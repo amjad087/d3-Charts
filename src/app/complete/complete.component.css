@@ -65,22 +65,35 @@
 }
 
 .progress-inner {
-  display: block;
-  background-image: url("../../assets/progress-circle.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url("../../assets/progress-circle.png");
   background-position: 50% 50%;
-  background-size: cover;
+  background-size: cover; */
   width: 200px;
   height: 200px;
   max-width: 200px;
   margin: auto;
+  color: white;
   border-radius: 50%;
   border: none;
   outline: none;
   background-color: black;
-  transform: translateY(-305px);
+  transform: translateY(-307px);
   /* z-index: 2; */
 }
 
+.progress-inner h4 {
+  margin-bottom: 1px;
+}
+
+.progress-inner h1 {
+  font: 400 40px Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  margin: 0 0 16px;
+}
 
 
 .mat-form-field-ripple {
