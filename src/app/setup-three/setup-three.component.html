@@ -1,19 +1,19 @@
 
 <div class="main-form">
-  <div class="next-prev">
+  <div class="next-prev" *ngIf="completed">
     <div class="back-header img">
       <a routerLink="/setup-two" class="invisibleLink"></a>
     </div>
   </div>
   <div class="main-info-form">
     <div class="inner-blocks">
-      <h3>Scanning Sample</h3>
+      <h3>{{completed ? "Complete" : "Scanning Samples"}}</h3>
       <svg width="500" height="400"></svg>
     </div>
   </div>
-  <div class="next-prev">
+  <div class="next-prev" *ngIf="completed">
     <div class="next-header img">
-      <a routerLink="/setup-four" class="invisibleLink"></a>
+      <a routerLink="/setup-five" class="invisibleLink"></a>
     </div>
   </div>
 </div>

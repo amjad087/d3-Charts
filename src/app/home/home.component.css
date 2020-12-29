@@ -18,6 +18,31 @@
   height: 300px;
   width: 25%;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus-button
+{
+  background-image: url("../../assets/Button-Plus.png");
+  background-position: 50%, 50%;
+  background-size:cover;
+  transform: translateY(-171px);
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: 0;
+  background-color: black;
+}
+
+.status .path {
+  margin: auto;
+}
+
+.status h1 {
+  transform: translateY(-80px);
 }
 
 .status h1,
@@ -31,6 +56,3 @@
   width: 25%;
 }
 
-.path {
-  margin-left: 5%;
-}

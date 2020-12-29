@@ -10,11 +10,11 @@
       <form >
         <mat-form-field class="example-full-width">
           <mat-label>Profile Name</mat-label>
-          <input matInput [matKeyboard] [darkTheme]="true">
+          <input matInput #biochipProfileRef (focus) = "onBiochipProfileFocus()">
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label>Notes</mat-label>
-          <input matInput [matKeyboard] [darkTheme]="true">
+          <input matInput #biochipNotesRef (focus) = "onBiochipNotesFocus()">
         </mat-form-field>
       </form>
     </div>
@@ -23,11 +23,11 @@
       <form >
         <mat-form-field class="example-full-width">
           <mat-label>Profile Name</mat-label>
-          <input matInput [matKeyboard] [darkTheme]="true">
+          <input matInput #sampleProfileRef (focus) = "onSampleProfileFocus()">
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label>Notes</mat-label>
-          <input matInput [matKeyboard] [darkTheme]="true">
+          <input matInput #sampleNotesRef (focus) = "onSampleNotesFocus()">
         </mat-form-field>
       </form>
     </div>

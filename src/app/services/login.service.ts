@@ -12,7 +12,7 @@ export class LoginService {
 
   onLogin() {
     this.isLoggedIn = true;
-    this.router.navigate(['/settings']);
+    this.router.navigate(['/home']);
   }
 
   isUserLoggedIn() {

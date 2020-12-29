@@ -1,50 +1,67 @@
+import { NavBarService } from './../services/nav-bar.service';
 import { ChartsService } from './../services/charts.service';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as d3 from 'd3';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  private data = [];
-  private johnData = [];
-  private completeData = [];
-  private unavailableData = [];
+export class HomeComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('available', {read: ElementRef}) elRef;
+
+  private data = [
+    {"complete": "100"},
+    {"complete": "0"},
+  ];;
+  private johnData = [
+    {"complete": "75"},
+    {"complete": "25"},
+  ];;
+  private completeData = [
+    {"complete": "100"},
+    {"complete": "0"},
+  ];;
+  private unavailableData = [
+    {"complete": "100"},
+    {"complete": "0"},
+  ];;
 
   private svg;
   private svg2;
   private svg3;
   private svg4;
   margin = 50;
+  private radius;
   private width = 200;
   private height = 200;
-  private radius = Math.min(this.width, this.height) / 2 - this.margin;
   private colors;
   private johnColors;
   private completeColors;
   private unavailableColors;
 
-  constructor(private chartsService: ChartsService) { }
+  constructor(private chartsService: ChartsService, private router: Router, private navService: NavBarService) { }
 
   ngOnInit(): void {
-    this.chartsService.getCompleteChartsData().subscribe(res => {
-      this.data = res.data[0].data; // available data
-      this.johnData = res.data[1].data; // john data
-      this.completeData = res.data[2].data; // complete data
-      this.unavailableData = res.data[3].data;  // unavailable data
-      this.createSvg();
-      this.createColors();
-      this.drawChart();
+    this.navService.show();
+  }
 
-    }, error => {
-      console.log(error);
-    });
-
+  ngAfterViewInit() {
+    this.createSvg();
+    this.createColors();
+    this.drawChart();
   }
 
   private createSvg(): void {
+    const divWidth = (this.elRef.nativeElement as HTMLElement).getBoundingClientRect().right;
+    const divHeight = (this.elRef.nativeElement as HTMLElement).getBoundingClientRect().bottom;
+
+    this.width = divWidth;
+    this.radius = Math.min(this.width, this.height) / 2 - this.margin;
+
     this.svg = d3.select("svg#available")
     .append("svg")
     .attr("width", this.width)
@@ -89,26 +106,26 @@ export class HomeComponent implements OnInit {
   private createColors(): void {
     this.colors = d3.scaleOrdinal()
     .domain(this.data.map(d => d.complete.toString()))
-    .range(["#ccf", "#ccf"]);
+    .range(["#94aad8", "#94aad8"]);
 
     this.johnColors = d3.scaleOrdinal()
     .domain(this.johnData.map(d => d.complete.toString()))
-    .range(["#c4b432", "#333"]);
+    .range(["#ffc028", "#1b2023"]);
 
 
     this.completeColors = d3.scaleOrdinal()
     .domain(this.johnData.map(d => d.complete.toString()))
-    .range(["#c4b432", "#333"]);
+    .range(["#ffc028", "#1b2023"]);
 
 
     this.unavailableColors = d3.scaleOrdinal()
     .domain(this.johnData.map(d => d.complete.toString()))
-    .range(["#333", "#333"]);
+    .range(["#1b2023", "#1b2023"]);
   }
 
   private drawChart(): void {
     // Compute the position of each group on the pie:
-    const pie = d3.pie<any>().value((d: any) => Number(d.complete));
+    const pie = d3.pie<any>().value((d: any) => Number(d.complete)).sort(null);
 
     // Build the pie chart
     this.svg
@@ -135,7 +152,7 @@ export class HomeComponent implements OnInit {
       .outerRadius(this.radius)
     )
     .attr('fill', (d, i) => (this.johnColors(i)))
-    .attr("stroke", "#121926")
+    .attr("stroke", "#000")
     .style("stroke-width", "1px");
 
     // Build the pie chart
@@ -167,4 +184,15 @@ export class HomeComponent implements OnInit {
     .style("stroke-width", "1px");
   }
 
+  onAvailableButtonClicked() {
+    this.router.navigate(['/setup']);
+  }
+
+  onJohnButtonClicked() {
+    this.router.navigate(['/progress']);
+  }
+
+  onCompleteButtonClicked() {
+    this.router.navigate(['/complete']);
+  }
 }

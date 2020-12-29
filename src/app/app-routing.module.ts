@@ -1,3 +1,5 @@
+import { CompleteComponent } from './complete/complete.component';
+import { InProgressComponent } from './in-progress/in-progress.component';
 import { LockScreenComponent } from './lock-screen/lock-screen.component';
 import { StatusComponent } from './status/status.component';
 import { SetupFiveComponent } from './setup-five/setup-five.component';
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: '', component: LockScreenComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'progress', component: InProgressComponent },
+  { path: 'complete', component: CompleteComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'setup', component: SetupComponent },
   { path: 'setup-two', component: SetupTwoComponent },

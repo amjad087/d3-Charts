@@ -1,7 +1,7 @@
 <div class="main-form">
   <div class="next-prev">
     <div class="back-header img">
-      <a routerLink="/setup-four" class="invisibleLink"></a>
+      <a routerLink="/setup-three" class="invisibleLink"></a>
     </div>
   </div>
   <div class="main-info-form">
@@ -10,7 +10,7 @@
       <form >
         <mat-form-field class="example-full-width">
           <mat-label>Location</mat-label>
-          <input matInput [matKeyboard] [darkTheme]="true">
+          <input matInput #currLocRef (focus) = "onCurrLocFocus()">
         </mat-form-field>
       </form>
     </div>
@@ -19,7 +19,7 @@
       <form >
         <mat-form-field class="example-full-width">
           <mat-label>Location</mat-label>
-          <input matInput [matKeyboard] [darkTheme]="true">
+          <input matInput #addLocRef (focus) = "onAddLocFocus()">
         </mat-form-field>
       </form>
     </div>

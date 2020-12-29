@@ -1,0 +1,13 @@
+[
+  {"status":"Ready","percent_complete":0,"user":"John Doe"},
+  {"status":"In Progress","percent_complete":10,"user":"John Doe"},
+  {"status":"In Progress","percent_complete":20,"user":"John Doe"},
+  {"status":"In Progress","percent_complete":30,"user":"John Doe"},
+  {"status":"In Progress","percent_complete":40,"user":"John Doe"},
+  {"status":"In Progress","percent_complete":50,"user":"John Doe"},
+  {"status":"In Progress","percent_complete":60,"user":"John Doe"},
+  {"status":"In Progress","percent_complete":70,"user":"John Doe"},
+  {"status":"In Progress","percent_complete":80,"user":"John Doe"},
+  {"status":"In Progress","percent_complete":90,"user":"John Doe"},
+  {"status":"Complete","percent_complete":100,"user":"John Doe"}
+  ]

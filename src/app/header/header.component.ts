@@ -1,3 +1,4 @@
+import { NavBarService } from './../services/nav-bar.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { LoginService } from './../services/login.service';
@@ -10,13 +11,17 @@ import { LoginService } from './../services/login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private navServcie: NavBarService) { }
 
   ngOnInit(): void {
   }
 
   isLoggedIn() {
     return this.loginService.isUserLoggedIn();
+  }
+
+  isVisible() {
+    return this.navServcie.isVisible();
   }
 
 }

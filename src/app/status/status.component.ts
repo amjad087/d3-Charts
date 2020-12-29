@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { NavBarService } from './../services/nav-bar.service';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
@@ -6,10 +7,10 @@ import * as d3 from 'd3';
   templateUrl: './status.component.html',
   styleUrls: ['./status.component.css']
 })
-export class StatusComponent implements OnInit {
+export class StatusComponent implements OnInit, AfterViewInit {
   private data = [
-    {"complete": "99.5"},
-    {"complete": "0.5"},
+    {"complete": "100"},
+    {"complete": "0"},
   ];
 
   private johnData = [
@@ -18,37 +19,53 @@ export class StatusComponent implements OnInit {
   ];
 
   private completeData = [
-    {"complete": "99.5"},
-    {"complete": "0.5"},
+    {"complete": "100"},
+    {"complete": "0"},
   ];
   private unavailableData = [
-    {"complete": "99.5"},
-    {"complete": "0.5"},
+    {"complete": "100"},
+    {"complete": "0"},
   ];
+
+  @ViewChild('available', {read: ElementRef}) elRef;
+
 
   private svg;
   private svg2;
   private svg3;
   private svg4;
   private margin = 50;
-  private width = 300;
-  private height = 250;
+  private width = 200;
+  private height = 200;
   private radius = Math.min(this.width, this.height) / 2 - this.margin;
   private colors;
   private johnColors;
   private completeColors;
   private unavailableColors;
 
-  constructor() { }
+  constructor(private navService: NavBarService) { }
 
   ngOnInit(): void {
+    this.navService.hide();
 
+  }
+
+  ngAfterViewInit() {
     this.createSvg();
     this.createColors();
     this.drawChart();
   }
 
   private createSvg(): void {
+
+    const divWidth = (this.elRef.nativeElement as HTMLElement).getBoundingClientRect().right;
+    const divHeight = (this.elRef.nativeElement as HTMLElement).getBoundingClientRect().bottom;
+
+
+
+    this.width = divWidth;
+    this.radius = Math.min(this.width, this.height) / 2 - this.margin;
+
     this.svg = d3.select("svg#available")
     .append("svg")
     .attr("width", this.width)
@@ -116,7 +133,7 @@ export class StatusComponent implements OnInit {
 
   private drawChart(): void {
     // Compute the position of each group on the pie:
-    const pie = d3.pie<any>().value((d: any) => Number(d.complete));
+    const pie = d3.pie<any>().value((d: any) => Number(d.complete)).sort(null);
 
     // Build the pie chart
     this.svg
@@ -126,11 +143,11 @@ export class StatusComponent implements OnInit {
     .append('path')
     .attr('d', d3.arc()
       .innerRadius(90)
-      .outerRadius(this.radius)
+      .outerRadius(this.radius + 5)
     )
     .attr('fill', (d, i) => (this.colors(i)))
-    .attr("stroke", "#121926")
-    .style("stroke-width", "1px");
+    .attr("stroke", "#000")
+    .style("stroke-width", "3px");
 
     // Build the pie chart
     this.svg2
@@ -140,11 +157,11 @@ export class StatusComponent implements OnInit {
     .append('path')
     .attr('d', d3.arc()
       .innerRadius(90)
-      .outerRadius(this.radius)
+      .outerRadius(this.radius + 5)
     )
     .attr('fill', (d, i) => (this.johnColors(i)))
-    .attr("stroke", "#121926")
-    .style("stroke-width", "1px");
+    .attr("stroke", "#000")
+    .style("stroke-width", "3px");
 
     // Build the pie chart
     this.svg3
@@ -154,11 +171,11 @@ export class StatusComponent implements OnInit {
     .append('path')
     .attr('d', d3.arc()
       .innerRadius(90)
-      .outerRadius(this.radius)
+      .outerRadius(this.radius + 5)
     )
     .attr('fill', (d, i) => (this.completeColors(i)))
-    .attr("stroke", "#121926")
-    .style("stroke-width", "1px");
+    .attr("stroke", "#000")
+    .style("stroke-width", "3px");
 
     // Build the pie chart
     this.svg4
@@ -168,11 +185,11 @@ export class StatusComponent implements OnInit {
     .append('path')
     .attr('d', d3.arc()
       .innerRadius(90)
-      .outerRadius(this.radius)
+      .outerRadius(this.radius + 5)
     )
     .attr('fill', (d, i) => (this.unavailableColors(i)))
-    .attr("stroke", "#121926")
-    .style("stroke-width", "1px");
+    .attr("stroke", "#000")
+    .style("stroke-width", "3px");
 
   }
 
